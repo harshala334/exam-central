@@ -61,11 +61,57 @@
 
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/yourusername/ExamEase.git
+git clone https://github.com/harshala334/ExamEase.git
 cd ExamEase
+```
 
 ### **2️⃣ Backend Setup**  
 ```sh
 cd server
 npm install
-npm start  # Starts Express server
+nodemon index.js  # Starts Express server
+```
+
+### **3️⃣ Frontend Setup**  
+```sh
+cd client
+npm install
+npm run dev  # Starts React development server
+```
+
+## 🔐 Authentication & Authorization  
+JWT-based authentication ensures secure logins.  
+
+### Role-based access control (RBAC):  
+- **Student**: View exams, check results  
+- **Faculty**: Upload marks, manage exams  
+- **Admin**: Oversee the entire system  
+
+## 📌 Usage Guide  
+
+### 🔹 Login & Role-Based Access  
+
+#### Students:  
+- Log in and view exam schedules & results.  
+- Check seating arrangements for upcoming exams.  
+
+#### Faculty:  
+- Upload and verify student marks.  
+- Manage exam-related tasks (mark sheets, schedules).  
+
+#### Administrators:  
+- Assign supervisors to exam halls.  
+- Monitor seating arrangements and generate reports.  
+
+## 📊 Future Enhancements  
+🚀 AI-based seating optimization for fairness & efficiency.  
+🚀 Live proctoring for remote exam monitoring.  
+🚀 QR-based attendance tracking for exam halls.  
+🚀 Automated plagiarism detection in exams.  
+
+## 📞 Contact  
+For queries, collaborations, or contributions, reach out at:  
+📧 mharshala334@gmail.com  
+
+🚀 Let’s make exam management seamless with **ExamEase**! 🚀  
+
