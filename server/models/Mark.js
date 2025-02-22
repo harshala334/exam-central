@@ -19,3 +19,6 @@ MarkSchema.pre("save", function (next) {
 
 const Mark = mongoose.model("Mark", MarkSchema);
 export default Mark; // ✅ Correct ES Module export
+
+//hello
+
