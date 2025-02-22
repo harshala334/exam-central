@@ -1,6 +1,5 @@
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const LandingPage = () => {
   const { role, isAuthenticated } = useAuth();
@@ -11,18 +10,11 @@ const LandingPage = () => {
       <p className="text-gray-600 mt-2">Your one-stop solution for seamless exam management</p>
 
       {isAuthenticated ? (
-        <>
-          <h2 className="text-xl mt-6 text-gray-700">
-            Logged in as: <span className="font-semibold text-blue-500">{role.toUpperCase()}</span>
-          </h2>
-          <Link to="/dashboard">
-            <Button className="mt-4">Go to Dashboard</Button>
-          </Link>
-        </>
+        <h2 className="text-xl mt-6 text-gray-700">
+          Logged in as: <span className="font-semibold text-blue-500">{role.toUpperCase()}</span>
+        </h2>
       ) : (
-        <Link to="/login">
-          <Button className="mt-6">Login to Get Started</Button>
-        </Link>
+        <p className="text-lg mt-6 text-gray-700">Please log in to access your dashboard.</p>
       )}
     </div>
   );

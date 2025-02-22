@@ -28,6 +28,12 @@ function Login({ setUser }) {
             console.log("Decoded User:", user); // Debug decoded token
     
             localStorage.setItem('role', user.role);  // ✅ Store role explicitly
+            
+            // ✅ Store facultyId only if the role is "faculty"
+            if (user.role === "faculty") {
+                localStorage.setItem('facultyId', user.id); 
+            }
+    
             setUser(user);
             navigate('/dashboard');
         } catch (err) {

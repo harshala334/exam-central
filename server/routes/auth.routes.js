@@ -28,7 +28,11 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token, role: user.role });
+    res.json({
+        token,
+        role: user.role,
+        facultyId: user.role === "faculty" ? user._id : null, // ✅ Send facultyId if user is a faculty
+    });
 });
 
 router.get('/dashboard', authenticateUser, (req, res) => {

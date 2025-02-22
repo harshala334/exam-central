@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { useEffect } from 'react';
 import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
+import LandingPage from './pages/LandingPage';
 import "./index.css";
 
 import Login from './pages/Login';
@@ -28,9 +29,11 @@ function App() {
         <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Navbar/>
             <Routes>
+                <Route path="/home" element={user ? <LandingPage /> : <Navigate to="/dashboard" />} />
                 <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
                 <Route path="/login" element={<Login setUser={setUser} />} />  {/* ✅ Pass setUser from context */}
                 <Route path="/register" element={<Register />} />
+               
                 
                 <Route path="/dashboard" element={user ? <Dashboard role={user.role} /> : <Navigate to="/login" />} />
                 <Route path="/manage-exams" element={user?.role === 'admin' ? <ManageExams /> : <Navigate to="/dashboard" />} />

@@ -1,10 +1,10 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 export const authenticateUser = (req, res, next) => {
-    const token = req.header('Authorization');
+    const token = req.header("Authorization");
 
     if (!token) {
-        return res.status(401).json({ error: 'Access denied. No token provided.' });
+        return res.status(401).json({ error: "Access denied. No token provided." });
     }
 
     try {
@@ -12,11 +12,11 @@ export const authenticateUser = (req, res, next) => {
         req.user = decoded;
         next();
     } catch {
-        res.status(400).json({ error: 'Invalid token' });
+        res.status(400).json({ error: "Invalid token" });
     }
 };
 
-// ✅ Add verifyAdmin function
+// ✅ Ensure correct named export for `verifyAdmin`
 export const verifyAdmin = (req, res, next) => {
     if (req.user && req.user.role === "admin") {
         next();

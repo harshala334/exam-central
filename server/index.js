@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/auth.routes.js';
 import examRoutes from './routes/exam.routes.js';
 import adminRoutes from './routes/admin.routes.js';
+import marksRoutes from "./routes/marks.routes.js";
 
 
 dotenv.config();
@@ -21,6 +22,9 @@ mongoose
 app.use('/api/auth', authRoutes);
 app.use('/api/exams', examRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/marks", marksRoutes);
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
