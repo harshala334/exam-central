@@ -1,10 +1,10 @@
 import express from "express";
-import { verifyAdmin } from "../middleware/authMiddleware.js";
+import { authorizeRoles} from "../middleware/authMiddleware.js";
 import User from "../models/User.js";
 
 const router = express.Router();
 
-router.get("/users", verifyAdmin, async (req, res) => {
+router.get("/users", authorizeRoles("admin"), async (req, res) => {
     try {
         const users = await User.find().select("-password");
         res.json(users);

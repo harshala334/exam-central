@@ -22,5 +22,5 @@ app.use('/api/auth', authRoutes);
 app.use('/api/exams', examRoutes);
 app.use("/api/admin", adminRoutes);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
