@@ -82,7 +82,14 @@ const Register = () => {
             required
             className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
           />
-
+          <input
+            type="text"
+            name="contactNo"
+            placeholder="Contact Number"
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+          />
           <div>
             <label className="block text-gray-700">Role:</label>
             <select
@@ -98,14 +105,6 @@ const Register = () => {
 
           {formData.role !== "admin" && (
             <>
-              <input
-                type="text"
-                name="contactNo"
-                placeholder="Contact Number"
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              />
               <input
                 type="text"
                 name="department"
