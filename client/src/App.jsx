@@ -14,7 +14,8 @@ import AdminDashboard from './pages/AdminDashboard';
 import ManageExams from './pages/ManageExams';
 import FacultyManageExams from './pages/FacultyManageExams';
 import ViewExams from './pages/ViewExams';
-
+import SeatingLayout from './pages/SeatingLayout';
+import SeatingPlanPage from './pages/SeatingPlanPage';
 
 function App() {
     const auth = useAuth(); 
@@ -39,6 +40,9 @@ function App() {
                 <Route path="/upload-marks" element={user?.role === 'faculty' ? <UploadMarks /> : <Navigate to="/dashboard" />} />
                 <Route path="/view-results" element={user?.role === 'student' ? <ViewResults /> : <Navigate to="/dashboard" />} />
                 <Route path="/admin" element={user?.role === 'admin' ? <AdminDashboard /> : <Navigate to="/dashboard" />} />
+                <Route path="/seating-arrangement" element={<SeatingLayout room="A101" />} />
+                <Route path="/seating-plan" element={<SeatingPlanPage />} /> 
+
             </Routes>
         </Router>
     );
