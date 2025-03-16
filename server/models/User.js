@@ -1,3 +1,4 @@
+
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
@@ -17,5 +18,4 @@ const UserSchema = new mongoose.Schema({
   // Fields for faculty
   employeeId: { type: String, unique: true, sparse: true },
 });
-
 export default mongoose.model("User", UserSchema);
